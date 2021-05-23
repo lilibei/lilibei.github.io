@@ -113,7 +113,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/19/git%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8B%E5%92%8C%E4%BF%AE%E6%94%B9%E7%94%A8%E6%88%B7%E5%90%8D%E5%8F%8A%E9%82%AE%E7%AE%B1/" data-id="ckp0rkoaa0000y61g1hty9n3f" data-title="git如何查看和修改用户名及邮箱" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/05/19/git%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8B%E5%92%8C%E4%BF%AE%E6%94%B9%E7%94%A8%E6%88%B7%E5%90%8D%E5%8F%8A%E9%82%AE%E7%AE%B1/" data-id="ckp0tovem0000em1g94t4205f" data-title="git如何查看和修改用户名及邮箱" class="article-share-link">分享</a>
       
       
       
@@ -145,7 +145,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2016/10/16/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Mac%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2%EF%BC%882021.5.18%E6%9B%B4%E6%96%B0%EF%BC%89/">如何使用Mac搭建hexo博客(2021.5.18更新)</a>
+      <a class="p-name article-title" href="/2016/10/16/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Mac%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2%EF%BC%882021.5.18%E6%9B%B4%E6%96%B0%EF%BC%89/">使用hexo将博客部署到github(2021.5.18更新)</a>
     </h1>
   
 
@@ -158,11 +158,34 @@
 </li>
 <li><p>Why Hexo<br>其实最开始的目的很简单，因为发现网上使用github+hexo搭建博客的人很多，自然教程也好找。后来偶然的在知乎的一个链接上看到才知道是因为hexo的作者无法忍受jeykll和octopress的提交速度，因此决定自己造了一个叫Hexo的轮子。关于名字的来源，大概是因为octopress取自8进制，而Hexo表示16进制。</p>
 </li>
-<li><p>Why Github (Gitlab or Coding)<br>访问速度快，且无需再购买VPS服务器。</p>
+<li><p>Why Github (Gitlab or Coding)<br>访问速度快，且无需购买VPS服务器。</p>
 </li>
 </ul>
 <p>网上关于github+hexo搭建博客的教程很多，但大多使用的Windows系统，本文以Mac系统为例，通过Hexo+Github搭建博客，希望借此抛砖引玉。</p>
 <h3 id="安装Nodejs"><a href="#安装Nodejs" class="headerlink" title="安装Nodejs"></a>安装Nodejs</h3><p>这一步很简单，访问Nodejs官网<a target="_blank" rel="noopener" href="https://nodejs.org/en/download/">(https://nodejs.org/en/download/)</a>下载、安装即可。<br><strong>本文以npm(v6.14.13)和node(v14.17.0)为例</strong></p>
+<h3 id="配置Github"><a href="#配置Github" class="headerlink" title="配置Github"></a>配置Github</h3><h4 id="注册Github账号"><a href="#注册Github账号" class="headerlink" title="注册Github账号"></a>注册Github账号</h4><ul>
+<li>登陆<a target="_blank" rel="noopener" href="https://github.com/">Github官网</a>、注册账号并通过邮箱验证。    </li>
+</ul>
+<p><img src="http://lilibei.net/image/2019-12-7.2.png"></p>
+<p><img src="http://lilibei.net/image/2019-12-7.3.png"></p>
+<h4 id="建立博客仓库"><a href="#建立博客仓库" class="headerlink" title="建立博客仓库"></a>建立博客仓库</h4><ul>
+<li>建立username.github.io的仓库名称(username为<strong>github</strong>用户名)。</li>
+</ul>
+<p><img src="http://lilibei.net/image/2019-12-7.4.png"></p>
+<h4 id="本地git连接github"><a href="#本地git连接github" class="headerlink" title="本地git连接github"></a>本地git连接github</h4><p><strong>所有操作均在～/.ssh/路径中进行</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#如果不存在就创建.ssh文件</span><br><span class="line">mkdir ~/.ssh</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>#####生成密钥对</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#&quot;your email address&quot;为注册github使用的email</span><br><span class="line">ssh-keygen -t rsa -C &quot;your email address&quot; </span><br></pre></td></tr></table></figure>
+
+<p><strong>注：此部分全程回车即可</strong><br><code>Generating public/private rsa key pair.</code><br><code>Enter passphrase (empty for no passphrase):</code></p>
+<p><img src="http://lilibei.net/image/2019-12-8.8.png"></p>
+<p>#####将公匙添加至gitHub</p>
+<p>使用cat命令查看公钥<br><code>cat id_rsa.pub</code></p>
+<p>复制内容并粘贴至<a target="_blank" rel="noopener" href="https://github.com/settings/keys">https://github.com/settings/keys</a>，然后选择<strong>New SSH key</strong>, <strong>title</strong>可不填写，将复制的公匙粘贴到<strong>key</strong>中再点击<strong>Add SSH key</strong>。</p>
+<p><img src="http://lilibei.net/image/2019-12-8.10.png"><br><img src="http://lilibei.net/image/2019-12-8.5.png"><br><img src="http://lilibei.net/image/2019-12-8.6.png"></p>
+<p>c.检测连接是否成功</p>
+<p>在Terminal命令行输入ssh -T <a href="mailto:&#103;&#x69;&#116;&#x40;&#x67;&#105;&#116;&#104;&#117;&#98;&#46;&#x63;&#111;&#x6d;">&#103;&#x69;&#116;&#x40;&#x67;&#105;&#116;&#104;&#117;&#98;&#46;&#x63;&#111;&#x6d;</a>成功结果显示如下：</p>
+<p><img src="http://lilibei.net/image/2019-12-8.11.png"></p>
 <h3 id="安装并配置hexo"><a href="#安装并配置hexo" class="headerlink" title="安装并配置hexo"></a>安装并配置hexo</h3><h4 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install -g hexo</span><br></pre></td></tr></table></figure>
 
 <h4 id="配置hexo"><a href="#配置hexo" class="headerlink" title="配置hexo"></a>配置hexo</h4><ul>
@@ -203,26 +226,6 @@
 <li>查看购买结果</li>
 </ul>
 <p><img src="http://lilibei.coding.me/image/2019-12-5.4.png"></p>
-<h3 id="配置Github"><a href="#配置Github" class="headerlink" title="配置Github"></a>配置Github</h3><h4 id="注册Github账号"><a href="#注册Github账号" class="headerlink" title="注册Github账号"></a>注册Github账号</h4><ul>
-<li>登陆<a target="_blank" rel="noopener" href="https://github.com/">Github官网</a>、注册账号并通过邮箱验证。    </li>
-</ul>
-<p><img src="http://lilibei.coding.me/image/2019-12-7.2.png"></p>
-<p><img src="http://lilibei.coding.me/image/2019-12-7.3.png"></p>
-<h4 id="建立博客仓库"><a href="#建立博客仓库" class="headerlink" title="建立博客仓库"></a>建立博客仓库</h4><ul>
-<li>建立username.github.io的仓库名称(username为用户名)。</li>
-</ul>
-<p><img src="http://lilibei.coding.me/image/2019-12-7.4.png"></p>
-<h4 id="本地Git连接Github"><a href="#本地Git连接Github" class="headerlink" title="本地Git连接Github"></a>本地Git连接Github</h4><p>a.在Terminal中运行ls ~/.ssh检查是否存在ssh密匙文件<strong>id_rsa</strong>（私匙）和<strong>id_rsa.pub</strong>（公匙）。</p>
-<p><img src="http://lilibei.coding.me/image/2019-12-8.8.png"></p>
-<p>如果没有则在Terminal中运行ssh-keygen -t rsa -C “引号中填写注册Github邮箱”。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;引号中填写注册Github邮箱&quot;</span><br></pre></td></tr></table></figure>
-
-<p>b.将公匙添加至GitHub</p>
-<p>使用cat命令查看公钥内容，复制里面的公匙粘贴至<a target="_blank" rel="noopener" href="https://github.com/settings/keys">https://github.com/settings/keys</a>，然后选择<strong>New SSH key</strong>, <strong>title</strong>可不填写，将复制的公匙粘贴到<strong>key</strong>中再点击<strong>Add SSH key</strong>。</p>
-<p><img src="http://lilibei.coding.me/image/2019-12-8.10.png"><br><img src="http://lilibei.coding.me/image/2019-12-8.5.png"><br><img src="http://lilibei.coding.me/image/2019-12-8.6.png"></p>
-<p>c.检测连接是否成功</p>
-<p>在Terminal命令行输入ssh -T <a href="mailto:&#x67;&#x69;&#116;&#64;&#103;&#x69;&#x74;&#104;&#x75;&#98;&#46;&#99;&#111;&#109;">&#x67;&#x69;&#116;&#64;&#103;&#x69;&#x74;&#104;&#x75;&#98;&#46;&#99;&#111;&#109;</a>成功结果显示如下：</p>
-<p><img src="http://lilibei.coding.me/image/2019-12-8.11.png"></p>
 <h3 id="绑定个人域名"><a href="#绑定个人域名" class="headerlink" title="绑定个人域名"></a>绑定个人域名</h3><ul>
 <li>创建CNAME文件并添加域名</li>
 </ul>
@@ -289,11 +292,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2016/10/16/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Mac%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2%EF%BC%882021.5.18%E6%9B%B4%E6%96%B0%EF%BC%89/" data-id="ckp0rkoak0005y61g5zs76tg2" data-title="如何使用Mac搭建hexo博客(2021.5.18更新)" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2016/10/16/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Mac%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2%EF%BC%882021.5.18%E6%9B%B4%E6%96%B0%EF%BC%89/" data-id="ckp0tovew0005em1g0yi101oq" data-title="使用hexo将博客部署到github(2021.5.18更新)" class="article-share-link">分享</a>
       
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/" rel="tag">Mac</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li></ul>
 
     </footer>
   </div>
@@ -323,7 +326,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/" rel="tag">Mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li></ul>
     </div>
   </div>
 
@@ -333,7 +336,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a>
+      <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a>
     </div>
   </div>
 
@@ -359,7 +362,7 @@
           </li>
         
           <li>
-            <a href="/2016/10/16/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Mac%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2%EF%BC%882021.5.18%E6%9B%B4%E6%96%B0%EF%BC%89/">如何使用Mac搭建hexo博客(2021.5.18更新)</a>
+            <a href="/2016/10/16/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Mac%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2%EF%BC%882021.5.18%E6%9B%B4%E6%96%B0%EF%BC%89/">使用hexo将博客部署到github(2021.5.18更新)</a>
           </li>
         
       </ul>
