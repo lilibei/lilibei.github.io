@@ -113,7 +113,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/19/git%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8B%E5%92%8C%E4%BF%AE%E6%94%B9%E7%94%A8%E6%88%B7%E5%90%8D%E5%8F%8A%E9%82%AE%E7%AE%B1/" data-id="ckp0vcm0m0000rl1g1nv339yk" data-title="git如何查看和修改用户名及邮箱" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/05/19/git%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8B%E5%92%8C%E4%BF%AE%E6%94%B9%E7%94%A8%E6%88%B7%E5%90%8D%E5%8F%8A%E9%82%AE%E7%AE%B1/" data-id="ckp1akvwe0000jq1g37jscuj8" data-title="git如何查看和修改用户名及邮箱" class="article-share-link">分享</a>
       
       
       
@@ -182,11 +182,17 @@
 
 <p><strong>注：此部分全程回车即可</strong><br><code>Generating public/private rsa key pair.</code><br><code>Enter passphrase (empty for no passphrase):</code></p>
 <p><img src="http://lilibei.net/image/2019-12-8.8.png"></p>
-<h5 id="将公匙添加至gitHub"><a href="#将公匙添加至gitHub" class="headerlink" title="将公匙添加至gitHub"></a>将公匙添加至gitHub</h5><p>使用cat命令查看公钥<br><code>cat id_rsa.pub</code></p>
-<p>复制内容并粘贴至<a target="_blank" rel="noopener" href="https://github.com/settings/keys">https://github.com/settings/keys</a>，然后选择<strong>New SSH key</strong>, <strong>title</strong>可不填写，将复制的公匙粘贴到<strong>key</strong>中再点击<strong>Add SSH key</strong>。</p>
+<h5 id="将公匙添加至gitHub"><a href="#将公匙添加至gitHub" class="headerlink" title="将公匙添加至gitHub"></a>将公匙添加至gitHub</h5><ul>
+<li><p>使用cat命令查看公钥<br><code>cat id_rsa.pub</code></p>
+</li>
+<li><p>复制内容并粘贴至<a target="_blank" rel="noopener" href="https://github.com/settings/keys">https://github.com/settings/keys</a>，然后选择<strong>New SSH key</strong>, <strong>title</strong>可不填写，将复制的公匙粘贴到<strong>key</strong>中再点击<strong>Add SSH key</strong>。</p>
+</li>
+</ul>
 <p><img src="http://lilibei.net/image/2019-12-8.10.png"><br><img src="http://lilibei.net/image/2019-12-8.5.png"><br><img src="http://lilibei.net/image/2019-12-8.6.png"></p>
-<p>c.检测连接是否成功</p>
-<p>在Terminal命令行输入ssh -T <a href="mailto:&#x67;&#x69;&#x74;&#x40;&#x67;&#x69;&#x74;&#104;&#117;&#98;&#46;&#x63;&#111;&#x6d;">&#x67;&#x69;&#x74;&#x40;&#x67;&#x69;&#x74;&#104;&#117;&#98;&#46;&#x63;&#111;&#x6d;</a>成功结果显示如下：</p>
+<ul>
+<li>检测连接是否成功</li>
+</ul>
+<p>在Terminal命令行输入ssh -T <a href="mailto:&#x67;&#105;&#x74;&#64;&#x67;&#105;&#116;&#104;&#x75;&#98;&#46;&#99;&#x6f;&#109;">&#x67;&#105;&#x74;&#64;&#x67;&#105;&#116;&#104;&#x75;&#98;&#46;&#99;&#x6f;&#109;</a>成功结果显示如下：<br><code>ssh -T git@github.com</code></p>
 <p><img src="http://lilibei.net/image/2019-12-8.11.png"></p>
 <h3 id="安装并配置hexo"><a href="#安装并配置hexo" class="headerlink" title="安装并配置hexo"></a>安装并配置hexo</h3><h4 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install -g hexo</span><br></pre></td></tr></table></figure>
 
@@ -228,20 +234,22 @@
 
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line">theme: next <span class="comment">#theme后面填写主题名称</span></span><br></pre></td></tr></table></figure>
 
-<p>更换<strong>Next</strong>主题的博客页面如下:</p>
+<ul>
+<li>更换<strong>Next</strong>主题的博客页面如下:</li>
+</ul>
 <p><img src="http://lilibei.coding.me/image/2019-12-11.1.png"></p>
-<h3 id="构建图床"><a href="#构建图床" class="headerlink" title="构建图床"></a>构建图床</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> MyBlog/<span class="built_in">source</span></span><br><span class="line">mkdir image</span><br></pre></td></tr></table></figure>
+<h3 id="构建图床"><a href="#构建图床" class="headerlink" title="构建图床"></a>构建图床</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> myblog/<span class="built_in">source</span></span><br><span class="line">mkdir image</span><br></pre></td></tr></table></figure>
 
 <p>将图片存放于image下，然后引用即可。   </p>
 <p><strong>引用地址为<a target="_blank" rel="noopener" href="http://username.github.io/image/picture">http://username.github.io/image/picture</a></strong></p>
-<p>username为创建Github所使用。</p>
+<p>username为创建github所使用。</p>
 <h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/index.html">Hexo官方说明文档</a></p>
-<p><strong>2021.5.18更新</strong></p>
+<p><strong>本文更新于2021.5.18</strong></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2016/10/16/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Mac%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/" data-id="ckp0vcm0y0005rl1g4vfq86s9" data-title="使用hexo将博客部署到github" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2016/10/16/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Mac%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/" data-id="ckp1akvwq0005jq1gf4kb7033" data-title="使用hexo将博客部署到github" class="article-share-link">分享</a>
       
       
       
