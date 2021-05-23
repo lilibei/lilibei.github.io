@@ -113,7 +113,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/19/git%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8B%E5%92%8C%E4%BF%AE%E6%94%B9%E7%94%A8%E6%88%B7%E5%90%8D%E5%8F%8A%E9%82%AE%E7%AE%B1/" data-id="ckp0ub4xx0001zp1g53kl2jo0" data-title="git如何查看和修改用户名及邮箱" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/05/19/git%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8B%E5%92%8C%E4%BF%AE%E6%94%B9%E7%94%A8%E6%88%B7%E5%90%8D%E5%8F%8A%E9%82%AE%E7%AE%B1/" data-id="ckp0uvkmn0000ds1g7z5pd84g" data-title="git如何查看和修改用户名及邮箱" class="article-share-link">分享</a>
       
       
       
@@ -163,7 +163,7 @@
 </ul>
 <p>网上关于github+hexo搭建博客的教程很多，但大多使用的Windows系统，本文以Mac系统为例，通过Hexo+Github搭建博客，希望借此抛砖引玉。</p>
 <h3 id="安装Nodejs"><a href="#安装Nodejs" class="headerlink" title="安装Nodejs"></a>安装Nodejs</h3><p>这一步很简单，访问Nodejs官网<a target="_blank" rel="noopener" href="https://nodejs.org/en/download/">(https://nodejs.org/en/download/)</a>下载、安装即可。<br><strong>本文以npm(v6.14.13)和node(v14.17.0)为例</strong></p>
-<h3 id="配置Github"><a href="#配置Github" class="headerlink" title="配置Github"></a>配置Github</h3><h4 id="注册Github账号"><a href="#注册Github账号" class="headerlink" title="注册Github账号"></a>注册Github账号</h4><ul>
+<h3 id="配置github"><a href="#配置github" class="headerlink" title="配置github"></a>配置github</h3><h4 id="注册github账号"><a href="#注册github账号" class="headerlink" title="注册github账号"></a>注册github账号</h4><ul>
 <li>登陆<a target="_blank" rel="noopener" href="https://github.com/">Github官网</a>、注册账号并通过邮箱验证。    </li>
 </ul>
 <p><img src="http://lilibei.net/image/2019-12-7.2.png"></p>
@@ -188,7 +188,7 @@
 <p>复制内容并粘贴至<a target="_blank" rel="noopener" href="https://github.com/settings/keys">https://github.com/settings/keys</a>，然后选择<strong>New SSH key</strong>, <strong>title</strong>可不填写，将复制的公匙粘贴到<strong>key</strong>中再点击<strong>Add SSH key</strong>。</p>
 <p><img src="http://lilibei.net/image/2019-12-8.10.png"><br><img src="http://lilibei.net/image/2019-12-8.5.png"><br><img src="http://lilibei.net/image/2019-12-8.6.png"></p>
 <p>c.检测连接是否成功</p>
-<p>在Terminal命令行输入ssh -T <a href="mailto:&#x67;&#x69;&#x74;&#x40;&#x67;&#105;&#x74;&#x68;&#x75;&#x62;&#46;&#x63;&#x6f;&#x6d;">&#x67;&#x69;&#x74;&#x40;&#x67;&#105;&#x74;&#x68;&#x75;&#x62;&#46;&#x63;&#x6f;&#x6d;</a>成功结果显示如下：</p>
+<p>在Terminal命令行输入ssh -T <a href="mailto:&#x67;&#x69;&#116;&#64;&#x67;&#105;&#116;&#104;&#117;&#98;&#x2e;&#99;&#x6f;&#x6d;">&#x67;&#x69;&#116;&#64;&#x67;&#105;&#116;&#104;&#117;&#98;&#x2e;&#99;&#x6f;&#x6d;</a>成功结果显示如下：</p>
 <p><img src="http://lilibei.net/image/2019-12-8.11.png"></p>
 <h3 id="安装并配置hexo"><a href="#安装并配置hexo" class="headerlink" title="安装并配置hexo"></a>安装并配置hexo</h3><h4 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install -g hexo</span><br></pre></td></tr></table></figure>
 
@@ -213,69 +213,15 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: </span><br><span class="line">    github: git@github.com:pele0412/pele0412.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
 
 <p><img src="http://lilibei.coding.me/image/2019-12-8.12.png"></p>
-<h3 id="购买域名"><a href="#购买域名" class="headerlink" title="购买域名"></a>购买域名</h3><ul>
-<li>登陆<a target="_blank" rel="noopener" href="https://sg.godaddy.com/zh">GoDaddy主页</a>并注册账号    </li>
-<li>输入想要注册的域名，并点击搜索域名（选择.online作为网站后缀因为便宜）   </li>
-</ul>
-<p><img src="http://lilibei.coding.me/image/2019-12-5.1.png"></p>
-<ul>
-<li>加入并进入购物车  </li>
-</ul>
-<p><img src="http://lilibei.coding.me/image/2019-12-5.2.png"></p>
-<ul>
-<li>选择支付方式</li>
-</ul>
-<p><img src="http://lilibei.coding.me/image/2019-12-5.3.png">    </p>
-<ul>
-<li>查看购买结果</li>
-</ul>
-<p><img src="http://lilibei.coding.me/image/2019-12-5.4.png"></p>
-<h3 id="绑定个人域名"><a href="#绑定个人域名" class="headerlink" title="绑定个人域名"></a>绑定个人域名</h3><ul>
-<li>创建CNAME文件并添加域名</li>
-</ul>
-<p>在MyBlog的soruce文件夹下创建CNAME文件，添加购买到的域名。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd MyBlog/source/</span><br><span class="line">vim CNAME</span><br></pre></td></tr></table></figure>
-
-<p><img src="http://lilibei.coding.me/image/2019-12-7.6.png"></p>
-<h3 id="使用DNSPod解析DNS"><a href="#使用DNSPod解析DNS" class="headerlink" title="使用DNSPod解析DNS"></a>使用DNSPod解析DNS</h3><ul>
-<li>登陆<a target="_blank" rel="noopener" href="https://sg.godaddy.com/zh">GoDaddy账户</a>后点击<strong>管理域名</strong></li>
-</ul>
-<p><img src="http://lilibei.coding.me/image/2019-12-5.4.png"></p>
-<ul>
-<li>进入<strong>我的域名</strong>管理界面点击管理DNS</li>
-</ul>
-<p><img src="http://lilibei.coding.me/image/2019-12-5.9.png"></p>
-<ul>
-<li>找到<strong>域名服务器处</strong>点击更改</li>
-</ul>
-<p><img src="http://lilibei.coding.me/image/2019-12-5.10.png"></p>
-<ul>
-<li>点击<strong>输入我自己的域名服务器（高级）</strong></li>
-</ul>
-<p><img src="http://lilibei.coding.me/image/2019-12-5.11.jpg"></p>
-<ul>
-<li>输入DNS地址<strong>f1g1ns1.dnspod.net</strong>和<strong>f1g1ns2.dnspod.net</strong>并点击保存</li>
-</ul>
-<p><img src="http://lilibei.coding.me/image/2019-12-5.12.png"></p>
-<ul>
-<li><p>登陆<a target="_blank" rel="noopener" href="https://www.dnspod.cn/">DNSPod主页</a>点击右上角<strong>管理控制台</strong></p>
-</li>
-<li><p>点击左面功能栏<strong>我的域名</strong>并添加从<a target="_blank" rel="noopener" href="https://sg.godaddy.com/zh">GoDaddy</a>购买的域名</p>
-</li>
-</ul>
-<p><img src="http://lilibei.coding.me/image/2019-12-5.15.png"></p>
-<ul>
-<li>点击我的域名并按照篮筐的内容添加，红框的内容为自动生成<br><img src="http://lilibei.coding.me/image/2019-12-8.13.png"></li>
-</ul>
-<h3 id="查看构建好的博客"><a href="#查看构建好的博客" class="headerlink" title="查看构建好的博客"></a>查看构建好的博客</h3><p>在Terminal中运行如下命令，在浏览器中输入购买到的域名即可显示博客页面。</p>
+<h3 id="浏览博客"><a href="#浏览博客" class="headerlink" title="浏览博客"></a>浏览博客</h3><p>在Terminal中运行如下命令，在浏览器中输入<a target="_blank" rel="noopener" href="https://pele0412.github.io/">https://pele0412.github.io</a>即可显示博客页面。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> MyBlog</span><br><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
 
 <h3 id="发布文章"><a href="#发布文章" class="headerlink" title="发布文章"></a>发布文章</h3><p>在Terminal中运行hexo new ‘第一篇文章’；引号中填写文章标题。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> MyBlog</span><br><span class="line">hexo new <span class="string">&#x27;我的文章&#x27;</span></span><br></pre></td></tr></table></figure>
 
-<p><strong>我的文章.md</strong>文件生成于/MyBlog/source/_posts文件夹下，<br>文章编辑完毕后运行如下命令，登陆购买到的域名即可查看到。</p>
+<p><strong>我的文章.md</strong>文件生成于/myBlog/source/_posts文件夹下，<br>文章编辑完毕后运行如下命令，登陆购买到的域名即可查看到。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-<p><img src="http://lilibei.coding.me/image/2019-12-9.15.png"></p>
+<p><img src="http://lilibei.net/image/2019-12-9.15.png"></p>
 <h3 id="更改主题"><a href="#更改主题" class="headerlink" title="更改主题"></a>更改主题</h3><p>可以同过查看<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/24422335">hexo主题排名</a>进行选择，以<strong>next</strong>主题为例：    </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> Myblog themes/</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
 
@@ -296,7 +242,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2016/10/16/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Mac%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2%EF%BC%882021.5.18%E6%9B%B4%E6%96%B0%EF%BC%89/" data-id="ckp0ub4xs0000zp1g9wws94dr" data-title="使用hexo将博客部署到github(2021.5.18更新)" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2016/10/16/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Mac%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2%EF%BC%882021.5.18%E6%9B%B4%E6%96%B0%EF%BC%89/" data-id="ckp0uvkmv0001ds1gfgvfhrou" data-title="使用hexo将博客部署到github(2021.5.18更新)" class="article-share-link">分享</a>
       
       
       
